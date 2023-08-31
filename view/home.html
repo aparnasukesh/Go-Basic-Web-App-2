@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <style>
+        body{
+            font-family:Arial, sans-serif ;
+            background-color: rgb(165, 9, 9);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container{
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            text-align: center;
+        }
+        h1{
+            color: #333333;
+        }
+        p{
+            color: #333333;
+        }
+        input[type="submit"]{
+            background-color: #ff7f50;
+            color: #ffffff;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.2s;
+        }
+        input[type="submit"]:hover{
+            background-color: #e36242;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Hello...<span style="color: #007bff;">{{.Username}}</span></h2>
+        <h1>Welcome to the Home Page</h1>
+        <form action="/logout" method="post">
+            <input type="submit"value="Logout">
+        </form>
+    </div>
+
+    <script>
+        //Clear cache on page load
+        window.onload=function(){
+            if(performance.navigation.type === 2){
+                // Back or forward button was clicked
+                window.location.reload(true);
+            }        
+        };
+    </script>
+    
+</body>
+</html>
